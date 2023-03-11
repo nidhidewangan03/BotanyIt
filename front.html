@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let's BotanyIt!</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<style>
+  .navbar-nav {
+    margin-left: auto;
+ 
+}
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color:rgba(19, 29, 86, 0.9);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.main-head{
+    font-weight: 700;
+    font-size: 110px;
+  }
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+.social-links .link-icon {
+    margin: 1rem;
+    color: var(--secondaryText);
+  }
+  /* ------nav bar ----------*/
+.topnav {
+    overflow:hidden;
+    /* background-color: #084e87; */
+  }
+  
+.topnav a {
+    float: left;
+    color: #084e87;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+.topnav a:hover {
+    background-color: #084e87;
+    color: rgb(231, 218, 218);
+  }
+
+.container{
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        display: flex;
+}
+.search{
+    width: 100%;
+    max-width: 900px;
+    background: #e5edf4;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+    backdrop-filter: blur(4px) saturate(180%);
+
+}
+.search input{
+    background: transparent;
+    flex:1;
+    outline: none;
+    border:0;
+    padding: 10px 10px ;
+    font-size: 20px;
+}
+::placeholder{
+    color: #084e87;
+}
+.search button{
+    border: 0;
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+    background: #5a92c6;
+    cursor: pointer;
+}
+.search button i{
+    width: 25px;
+}
+.serachit{
+    font-size: large;
+    color: var(--secondaryText)
+}
+
+/*footer8*/
+.footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    background-color: #f8f9fa;
+    color: #084e87;
+    text-align: center;
+  }
+.footer:hover{
+    color: #031424;
+  }
+h1{
+    color: #f8f9fa;
+}
+.Text{
+  font-size:xx-large;
+  color:#f8f9fa;
+  display:block;
+  padding: 10px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-light">
+    <div class="topnav">
+
+        <a href="#" onclick="myFunction1()">About</a>
+        <a href="Contactus.html">Contact Us
+        </a>
+  
+      </div>
+    <ul class="navbar-nav">
+
+        <li class="nav-item">
+            <div class="logo-image">
+                <img src="searchit.jpeg" alt="img" style="max-width: 50px; max-height:50px">&nbsp;
+                <a  class="searchit">
+                    Let's BotanyIt!
+                </a>
+          </div>
+            
+        </li>
+    </ul>
+</nav>
+<header>
+  <div class="Text">
+    <a href="front.html" class="typewrite" data-period="2000" data-type='[ "Lets SearchIt !", "Lets BotanyIt !", "Lets KnowAbout It !" ]'>
+      <span class="wrap"></span>
+    </a>
+  </div>
+</header>
+<section>
+    <br>
+    <h1 class="text-center">Let's BotanyIt!</h1>
+    <br>
+
+    <div class="container">
+
+    <form action="https://gabygoldberg.medium.com/the-building-in-public-how-to-guide-219d417f00c1#:~:text=The%20Building%20in%20Public%20Playbook" method="get" class="search">
+        <input type="text" placeholder="Search Here" name="q">
+        <button type="submit">
+            <i class='fas eventIcon fa-search'></i>
+        </button>
+    </form>
+</div>
+</section>
+
+<div>
+    <br>
+
+</div>
+<div class="footer">
+    
+    <div class="social-links">
+        <a href="https://github.com/nidhidewangan03/Aarambh" class="link-icon"><i class="fab fa-2x fa-github"></i></a>
+    </div>
+    copyright &copy; all rights are reserved 
+    <br>
+    <br>
+</div>
+
+<script>
+
+    function myFunction1() {
+        alert("About\n" + "It is a basic Frontend part of  'Let's Botany It' website where people come and search to know about the plants they are curious to know about. This is only part of website that mainly focusses on to increase knowledge and end curiosity of people for plants.");
+
+      }
+
+      var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #a6ffcb}";
+        document.body.appendChild(css);
+    };
+
+
+    </script>
+</body>
+</html>
